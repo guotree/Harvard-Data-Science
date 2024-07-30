@@ -128,9 +128,7 @@ class(x)
 - **Vector arithmetics**:
 	- arithmetic operations on vectors occur _element-wise_
 	- If we have two vectors of the same length, and we sum them in R, they will be added entry by entry as follows:
-$$
-\begin{pmatrix}a\\b\\c\\d\end{pmatrix}+\begin{pmatrix}e\\f\\g\\h\end{pmatrix}=\begin{pmatrix}a+e\\b+f\\c+g\\d+h\end{pmatrix}
-$$
+$$\begin{pmatrix}a\\b\\c\\d\end{pmatrix}+\begin{pmatrix}e\\f\\g\\h\end{pmatrix}=\begin{pmatrix}a+e\\b+f\\c+g\\d+h\end{pmatrix}$$
 	- if the vectors don’t match in length,  R has recycled the numbers in the short vector
 - **Indexing**: 
 	- we can use logicals to index vectors
