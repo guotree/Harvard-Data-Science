@@ -101,7 +101,7 @@ codes
 #> 380 124 818
 names(codes)
 #> [1] "italy"  "canada" "egypt"
-# another way to assign name
+#another way to assign name
 codes <- c(380, 124, 818)
 country <- c("italy","canada","egypt")
 names(codes) <- country
@@ -111,7 +111,7 @@ codes
 	```
 - Use `seq` for creating vectors generates sequance
 - **Subsetting**: We use square brackets to access specific elements of a vector.
-- **Coercion**: When an entry does not match the expected, some of the prebuilt R functions try to guess what was meant before throwing an error.
+- **Coercion**: When an entry does not match the expected, some of the prebuilt R functions try to guess what was meant before throwing an error. `as.numeric`, `as.character`; a special value called an `NA` for “not available”
 ```R
 x <- c(1, "canada", 3)
 x
@@ -119,24 +119,28 @@ x
 class(x)
 #> [1] "character"
 ```
-### Sorting and Ordering
-- `sort` return the sorted vector in increasing order.
-- `order`  takes a vector as input and returns the vector of indexes that sorts the input vector
-- `rank` For any given vector it returns a vector with the rank of the first entry, second entry, etc., of the input vector.
-- `max` and `min` return the value.
-- `which.max` and `which.min` return the index.
-
-### Ranks
-- Assigning ranks to vector entries with the `rank` function
-
+- **Sorting and Ordering**
+	- `sort` return the sorted vector in increasing order.
+	- `order`  takes a vector as input and returns the vector of indexes that sorts the input vector
+	- `rank` For any given vector it returns a vector with the rank of the first entry, second entry, etc., of the input vector.
+	- `max` and `min` return the value.
+	- `which.max` and `which.min` return the index.
+- **Vector arithmetics**:
+	- arithmetic operations on vectors occur _element-wise_
+	- If we have two vectors of the same length, and we sum them in R, they will be added entry by entry as follows:
+	$$
+	\begin{pmatrix}a\\b\\c\\d\end{pmatrix}+\begin{pmatrix}e\\f\\g\\h\end{pmatrix}=\begin{pmatrix}a+e\\b+f\\c+g\\d+h\end{pmatrix}
+	$$
+	- if the vectors don’t match in length,  R has recycled the numbers in the short vector
+- **Indexing**: 
+	- we can use logicals to index vectors
+		- logical operator: `==`, `!=`, `<>`, `>`, `>=`, `<`, `<=`, `&`, `|`, `!`, `&&`, `||`
+		- `&`and `|` are Element-wise Logical operator
+		- `&&` and `||` are Vectorized Logical operator
+	-  The function `which` tells us which entries of a logical vector are TRUE
+	- The function `match` tells us which indexes of a second vector match each of the entries of a first vector
+	- If rather than an index we want a logical that tells us whether or not each element of a first vector is in a second, we can use the function `%in%`
 ### Basic Plots
-- Creating scatterplots with `plot`, histograms with `hist`, and boxplots with `boxplot`
-
-### Exercises
-- Various exercises to practice R skills, such as calculating sums, evaluating functions, and manipulating datasets
-
-### Additional Notes
-- Importance of understanding coercion in R and handling `NA` values for missing data
-- Using logical operators for conditional indexing
-- Basic plotting for data visualization and analysis
+- Creating scatterplots with `plot`, histograms with `hist`, boxplots with `boxplot`, and image with `image`
+- The function `with` Evaluate an **R** expression in an environment constructed from data, possibly modifying (a copy of) the original data.
 
