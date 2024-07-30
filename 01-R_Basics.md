@@ -94,7 +94,7 @@ Using `class()` to identify the type of an object; The function `str` is usefu
 	- We can convert matrices into data frames using the function `as.data.frame`
 ### More of Vectors
 - **names**: 
-	```R
+```R
 codes <- c(italy = 380, canada = 124, egypt = 818)
 codes 
 #> italy canada egypt 
@@ -108,7 +108,7 @@ names(codes) <- country
 codes
 #>  italy canada  egypt 
 #>    380    124    818
-	```
+```
 - Use `seq` for creating vectors generates sequance
 - **Subsetting**: We use square brackets to access specific elements of a vector.
 - **Coercion**: When an entry does not match the expected, some of the prebuilt R functions try to guess what was meant before throwing an error. `as.numeric`, `as.character`; a special value called an `NA` for “not available”
@@ -128,9 +128,9 @@ class(x)
 - **Vector arithmetics**:
 	- arithmetic operations on vectors occur _element-wise_
 	- If we have two vectors of the same length, and we sum them in R, they will be added entry by entry as follows:
-	$$
-	\begin{pmatrix}a\\b\\c\\d\end{pmatrix}+\begin{pmatrix}e\\f\\g\\h\end{pmatrix}=\begin{pmatrix}a+e\\b+f\\c+g\\d+h\end{pmatrix}
-	$$
+$$
+\begin{pmatrix}a\\b\\c\\d\end{pmatrix}+\begin{pmatrix}e\\f\\g\\h\end{pmatrix}=\begin{pmatrix}a+e\\b+f\\c+g\\d+h\end{pmatrix}
+$$
 	- if the vectors don’t match in length,  R has recycled the numbers in the short vector
 - **Indexing**: 
 	- we can use logicals to index vectors
