@@ -163,3 +163,6 @@ $$
 - **For-loops**: the grammar is also like C language.
 - **Vectorization and functionals**: _vectorization_ is preferred over for-loops
 	- _Functionals_ are functions that help us apply the same function to each entry in a vector, matrix, data frame, or list. Here we cover the functional that operates on numeric, logical, and character vectors: `sapply`.
+## 4. The tidyverse
+## 5. data.table
+## 6. Importing data

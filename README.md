@@ -14,9 +14,9 @@ It consists of 9 separate courses:
 | Machine Learning       | [link](https://www.edx.org/learn/machine-learning/harvard-university-data-science-machine-learning)   | [Note08](./08-Machine_Learning.md)       |
 | Capstone               | [link](https://www.edx.org/learn/data-science/harvard-university-data-science-capstone)               | [Note09](./09-Capstone.md)               |
 
-[link](./09-Capstone.md)
 However the core material is two HTML book:
 - [Introduction to Data Science: Data Wrangling and Visualization with R](https://rafalab.dfci.harvard.edu/dsbook-part-1/)
 - [Introduction to Data Science: Statistics and Prediction Algorithms Through Case Studies](https://rafalab.dfci.harvard.edu/dsbook-part-2/)
 
 I think this book is sufficient to guide you through mastering the series of courses!
+Exercises and quiz are also important, so do them yourself.
