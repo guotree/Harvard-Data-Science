@@ -177,7 +177,7 @@ $$
 - We can extract varialbes with `pull`
 - With `arrange` we get to decide which column to sort by (also for nested sorting)
 -  The function `top_n` takes a data frame as it’s first argument, the number of rows to show in the second, and the variable to filter by in the third. if the third argument is left blank, `top_n` filters by the last column.
-- **“tibble”**, is a special kind of data frame
+- **“tibble”**, is a special kind of data frame, we can transform a data frame into a tibble by `as_tibble`
 	- Tibbles display better than data frame
 	- Tibbles can have complex entries (even functions)
 	- Tibbles can be grouped
@@ -210,6 +210,28 @@ as_tibble(grades_d) |> class()
 	```
 	- `between` function determines if a value falls inside an interval.
 ## 5. data.table
+- **data.table** is more efficient and can handle larger datasets more effectively.
+- **data.table** is a separate package that needs to be installed: `library(data.frame)`
+- **Refining data tables**:
+	- `as.data.table` can convert the data frame into a data.table
+	- **Column-wise subsetting**: 
+	```R
+	murders_dt[, c("state", "region")] 
+	murders_dt[, .(state, region)] 
+	```
+	- **Adding or transformin variables**: The **data.table** `:=` function permits us update the variable by reference
+	```R
+	murders_dt[, rate := total / population * 100000]
+	murders_dt[, ":="(rate = total / population * 100000, rank = rank(population))]
+	```
+	- **Reference versus copy**
+		- The **data.table** package is designed to avoid wasting memory: In `y <- x` , `y` is referencing `x`; In `y <- copy(x)`, `y` is the actual copy of `x`
+		- the function `as.data.table` creates a copy of the data frame being converted. However, if working with a large data frames it is helpful to avoid this by using `setDT`:
+	- **Row-wise subsetting**: `murders_dt[rate <= 0.7, .(state, rate)]` has the same function as `murders |> filter(rate <= 0.7) |> select(state, rate)`
+- **Summarizing data**: `s <- heights |> summarize(avg = mean(height), sd = sd(height))` has the same function as `s <- heights_dt[, .(avg = mean(height), sd = sd(height))]`
+	- We simply add the `by` argument to split the data into groups based on the values in categorical variable `heights_dt[, .(avg = mean(height), sd = sd(height)), by = sex]`
+- **Sorting**: `murders_dt[order(population)]`
+
 ## 6. Importing data
  - highly recommend only using *relative paths* in your code
  - `getwd` get the full path of your working directory; `setwd` change your working directory; `file.path` function combines characters to form a complete path; `file.copy` copy the file with full path; 
