@@ -166,3 +166,47 @@ $$
 ## 4. The tidyverse
 ## 5. data.table
 ## 6. Importing data
+ - highly recommend only using *relative paths* in your code
+ - `getwd` get the full path of your working directory; `setwd` change your working directory; `file.path` function combines characters to form a complete path; `file.copy` copy the file with full path; 
+ - **File types**: text files and binary files
+	 -  The most common delimiters are comma (`,`), semicolon (`;`), space (` `), and tab (a preset number of spaces or `\t`); 
+	 - You can look at any number of lines from within R using the `readLines` function which can reveal what the file's delimited is.
+	 - R’s `readBin` function can process any binary file
+	 - **Encoding**: ASCII, UTF-8, UTF-16, and UTF-32; RStudio typically uses **UTF-8** as its default
+- **Parsers**: importing functions are most in **readr**, **readxl** and **data.table** packages.
+	- **Basic R**: `read.csv`, `read.table` and `read.delim`; `scan` is another flexible function
+	- **readr**: it is part of the **tidyverse**; Its parsers permit us to specify an encoding. It also includes a function `guess_encoding` that tries to guess the encoding;  we can specify it through the `locale` argument
+	
+| Function     | Format                                          | Typical suffix |
+| ------------ | ----------------------------------------------- | -------------- |
+| `read_table` | white space separated values                    | txt            |
+| `read_csv`   | comma separated values                          | csv            |
+| `read_csv2`  | semicolon separated values                      | csv            |
+| `read_tsv`   | tab delimited separated values                  | tsv            |
+| `read_delim` | general text file format, must define delimiter | txt            |
+	- **readxl**: provides functions to read-in Microsoft Excel formats; These functions read the first sheet by default; The `excel_sheets` function gives us the names of all the sheets in an Excel file. These names can then be passed to the `sheet` argument in these functions.
+
+| Function   | Format                 | Typical suffix |
+| ---------- | ---------------------- | -------------- |
+| read_excel | auto detect the format | xls, xlsx      |
+| read_xls   | original format        | xls            |
+| read_xlsx  | new format             | xlsx           |
+	- **data.table**: provides the `fread` function for large datasets which automatically detects the format of the input (even gzip and zip)
+- **Downloading files**: Most parsers can read these files on the internet through url directly; 
+	- you can use the `download.file` function to have a local copy of the file; 
+	- `tempdir` creates a directory with a random name that is very likely to be unique;
+	-  `tempfile` creates a character string, not a file, that is likely to be a unique filename
+- **Organizing data with spreadsheets**: 
+	- avoid Microsoft Excel format
+	- **Be Consistent**
+	- **Choose Good Names for Things**: don't use space and symbols; stick to letters and numbers
+	- **Write Dates as YYYY-MM-DD**
+	- **No Empty Cells**
+	- **Put Just One Thing in a Cell**
+	- **Make It a Rectangle**
+	- **Create a Data Dictionary**
+	- **No Calculations in the Raw Data Files**
+	- **Do Not Use Font Color or Highlighting as Data**
+	- **Make Backups**
+	- **Use Data Validation to Avoid Errors**
+	- **Save the Data as Text Files**
