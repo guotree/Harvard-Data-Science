@@ -3,7 +3,9 @@ This course includes 4 sections:
 - Section 2: Data Wrangling
 - Section 3: Programming Basics
 - Section 4: Importing Data
+
 These four sections correspond to the first chapter of the [first book](https://rafalab.dfci.harvard.edu/dsbook-part-1/).
+
 I will take notes in the order of the book rather than the order of the video.
 
 ## 1. Getting Started
@@ -164,6 +166,49 @@ $$
 - **Vectorization and functionals**: _vectorization_ is preferred over for-loops
 	- _Functionals_ are functions that help us apply the same function to each entry in a vector, matrix, data frame, or list. Here we cover the functional that operates on numeric, logical, and character vectors: `sapply`.
 ## 4. The tidyverse
+- **Tidy format** permits the data analyst to focus on more important aspects of the analysis rather than the format of the data
+- Refining data frame:
+	- `mutate`: **adding columns**;  it takes the data frame as a first argument and the name and values of the variable as a second argument using the convention; **transform variables**, apply the same transformation to several variables by `across`
+	- `filter`: row-wise subsetting; it takes the data frame as the first argument and then a conditional statement as the second
+	- `select`: column-wise subsetting;  it takes the data frame as a first argument and the column name as the next arguments (or `starts_with`, `where`, `ends_with`, `contains`, `matches`, `num_range`)
+- **Pipe**: perform a series of operations by `%>%` or `|>`; the pipe sends the result of the left side of the pipe to be the first argument of the function on the right side of the pipe
+- The `summarize` function in **dplyr** provides a way to compute summary statistics
+- A common operation in data exploration is to first split data into groups and then compute summaries for each group `group_by`
+- We can extract varialbes with `pull`
+- With `arrange` we get to decide which column to sort by (also for nested sorting)
+-  The function `top_n` takes a data frame as it’s first argument, the number of rows to show in the second, and the variable to filter by in the third. if the third argument is left blank, `top_n` filters by the last column.
+- **“tibble”**, is a special kind of data frame
+	- Tibbles display better than data frame
+	- Tibbles can have complex entries (even functions)
+	- Tibbles can be grouped
+	- creating tibble;
+```R
+grades_t <- tibble(names = c("John", "Juan", "Jean", "Yao"), 
+                     exam_1 = c(95, 80, 90, 85), 
+                     exam_2 = c(90, 85, 85, 90))
+grades_d <- data.frame(names = c("John", "Juan", "Jean", "Yao"), 
+                     exam_1 = c(95, 80, 90, 85), 
+                     exam_2 = c(90, 85, 85, 90))
+as_tibble(grades_d) |> class()
+#> [1] "tbl_df"     "tbl"        "data.frame"
+```
+- **Placeholder**: if we want to pass it as argument to the right-hand side function that is not the first, we should use placeholder.
+	- For `|>` pipe the placeholder operator is `_` 
+	- for the `%>%` pipe the placeholder is `.`
+- **purrr** package:  includes functions similar to `sapply` but that better interact with other tidyverse functions
+	-  `map` works very similar to `sapply` but always, without exception, returns a list
+	- `map_dbl` always returns a vector of numeric values
+	- `map_df`, always returns a tibble data frame
+- **Tidyverse conditionals**: 
+	- The `case_when` function is useful for vectorizing conditional statements. It is similar to `ifelse` but can output any number of values
+	```R
+	x <- c(-2, -1, 0, 1, 2)
+	case_when(x < 0 ~ "Negative", 
+	          x > 0 ~ "Positive", 
+	          TRUE  ~ "Zero")
+	#> [1] "Negative" "Negative" "Zero"     "Positive" "Positive"
+	```
+	- `between` function determines if a value falls inside an interval.
 ## 5. data.table
 ## 6. Importing data
  - highly recommend only using *relative paths* in your code
