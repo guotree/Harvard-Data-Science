@@ -129,7 +129,7 @@ class(x)
 	- arithmetic operations on vectors occur _element-wise_
 	- If we have two vectors of the same length, and we sum them in R, they will be added entry by entry as follows:
 $$
-\begin{pmatrix}a  \\b \\c \\d\end{pmatrix}+\begin{pmatrix}e \\f \\g \\h\end{pmatrix}=\begin{pmatrix}a+e \\b+f \\c+g \\d+h\end{pmatrix}
+\begin{pmatrix}a \\b \\c \\d\end{pmatrix}+\begin{pmatrix}e \\f \\g \\h\end{pmatrix}=\begin{pmatrix}a+e \\b+f \\c+g \\d+h\end{pmatrix}
 $$
 	- if the vectors don’t match in length,  R has recycled the numbers in the short vector
 - **Indexing**: 
@@ -143,4 +143,23 @@ $$
 ### Basic Plots
 - Creating scatterplots with `plot`, histograms with `hist`, boxplots with `boxplot`, and image with `image`
 - The function `with` Evaluate an **R** expression in an environment constructed from data, possibly modifying (a copy of) the original data.
-
+## 3. Programming Basic
+- **Conditional expressions**
+	- R use if-else statement (like C language) for flow control
+	- `ifelse`  takes three arguments: a logical and two possible answers. If the logical is `TRUE`, the value in the second argument is returned and if `FALSE`, the value in the third argument is returned
+- **Defining functions**
+	- In general, functions are objects, so we assign them to variable names with `<-`. The function `function` tells R you are about to define a function. The general form of a function definition looks like this:
+	```R
+	my_function <- function(VARIABLE_NAME){
+	  perform operations on VARIABLE_NAME and calculate VALUE
+	  VALUE
+	}
+	```
+- **namespace**: it is likely that two packages use the same name for two different functions
+	- R will follow a certain order when searching for a function in these _namespaces_. You can see the order by typing `search`
+	- You can force the use of a specific namespace by using double colons (`::`) like: `dplyr::filter`, `stats::filter`
+	- if we want to use a function in a package without loading the entire package, we can use the double colon as well
+	-   If you want to see all the packages that have function called, for example `filter`, you can use double questions marks: `??filter`
+- **For-loops**: the grammar is also like C language.
+- **Vectorization and functionals**: _vectorization_ is preferred over for-loops
+	- _Functionals_ are functions that help us apply the same function to each entry in a vector, matrix, data frame, or list. Here we cover the functional that operates on numeric, logical, and character vectors: `sapply`.
