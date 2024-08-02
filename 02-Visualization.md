@@ -2,11 +2,11 @@
 
 Tools for data visualization: 
 
-| scene                     | Package       |
-| ------------------------- | ------------- |
-| basics data visualization | ggplot2       |
-| interactive plots         | plotly, Shiny |
-| more advanced challenges  | D3.js         |
+| scene                     | Package                 |
+| ------------------------- | ---------------------- |
+| basics data visualization ggplot2, lattice, grid ,  |
+| interactive plots         | plotly, Sh              |
+| more advanced challenges  | D                       |
 
 ## 7. Visualizing data distributions
 - **Variable types**: categorical (ordinal or not) and numeric (discrete or continuous)
@@ -20,4 +20,36 @@ Tools for data visualization:
 -  **stratification**: Dividing observations into groups based on the values of one or more variables associated with those observations. 
 	- the resulting groups is _strata_.
 
+## 8. ggplot2
+- benifit: easy for beginners; more intuitive for beginners (it uses a grammar of graphics)
+- limitation: work exclusively with data tables in tidy format.
+- **ggplot2** consists of some components
+	1. **Data**
+	2. **Geometry**
+	3. **Aesthetic mapping**
 
+> DATA |> ggplot() + LAYER 1 + LAYER 2 + … + LAYER N
+
+![ggplot](./asset/data-visualization.pdf)
+
+```R
+library(ggthemes)
+library(ggrepel)
+
+r <- murders |> 
+  summarize(rate = sum(total) /  sum(population) * 10^6) |>
+  pull(rate)
+
+murders |> 
+  ggplot(aes(population/10^6, total)) +   
+  geom_abline(intercept = log10(r), lty = 2, color = "darkgrey") +
+  geom_point(aes(col = region), size = 3) +
+  geom_text_repel(aes(label = abb)) + 
+  scale_x_log10() +
+  scale_y_log10() +
+  labs(title = "US Gun Murders in 2010",
+                x = "Populations in millions (log scale)", 
+                y = "Total number of murders (log scale)",
+                color = "Region") +
+  theme_economist()
+```
