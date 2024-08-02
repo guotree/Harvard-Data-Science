@@ -30,8 +30,17 @@ Tools for data visualization:
 
 > DATA |> ggplot() + LAYER 1 + LAYER 2 + … + LAYER N
 
-![ggplot](./asset/data-visualization.pdf)
+- **Packages**: **ggplot2**, **ggthemes**, **ggrepel**
+- some functions in **ggplot2**: 
+	- barplots: `geom_bar`
+	-  histograms: `geo_histogram`
+	- density plots: `geo_density`
+	- boxplots: `geo_boxplot`
+	- images: `geom_tile` and `geom_raster`
 
+[ggplot2 cheatsheet pdf](./asset/data-visualization.pdf)
+![](./asset/ggplot2-1.png)
+![](./asset/ggplot2-2.png)
 ```R
 library(ggthemes)
 library(ggrepel)
@@ -53,3 +62,4 @@ murders |>
                 color = "Region") +
   theme_economist()
 ```
+
