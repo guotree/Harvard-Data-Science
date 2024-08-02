@@ -19,6 +19,9 @@ Tools for data visualization:
 - **Boxplots**: provides a five-number summary composed of the range (the minimum and maximum) along with the quartiles (the 25th, 50th, and 75th percentiles)
 -  **stratification**: Dividing observations into groups based on the values of one or more variables associated with those observations. 
 	- the resulting groups is _strata_.
+- quantile: are cutoff points that divide a dataset into intervals with set probabilities `quantile(data, q)`
+- `pnorm(a, avg, s)` gives the value of the cumulative distribution function  for the normal distribution defined by average `avg` and standard deviation `s`.
+- Quantile-quantile plots, or QQ-plots, are used to check whether distributions are well-approximated by a normal distribution.
 
 ## 8. ggplot2
 - benifit: easy for beginners; more intuitive for beginners (it uses a grammar of graphics)
