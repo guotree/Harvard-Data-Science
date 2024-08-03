@@ -2,11 +2,11 @@
 
 Tools for data visualization: 
 
-| scene                     | Package                 |
+| scene                     | Package                |
 | ------------------------- | ---------------------- |
-| basics data visualization ggplot2, lattice, grid ,  |
-| interactive plots         | plotly, Sh              |
-| more advanced challenges  | D                       |
+| basics data visualization | ggplot2, lattice, grid |
+| interactive plots         | plotly, Shiny          |
+| more advanced challenges  | D3.s                   |
 
 ## 7. Visualizing data distributions
 - **Variable types**: categorical (ordinal or not) and numeric (discrete or continuous)
