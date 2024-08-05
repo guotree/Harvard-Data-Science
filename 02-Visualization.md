@@ -6,7 +6,7 @@ Tools for data visualization:
 | ------------------------- | ---------------------- |
 | basics data visualization | ggplot2, lattice, grid |
 | interactive plots         | plotly, Shiny          |
-| more advanced challenges  | D3.s                   |
+| more advanced challenges  | D3.js                  |
 
 ## 7. Visualizing data distributions
 - **Variable types**: categorical (ordinal or not) and numeric (discrete or continuous)
@@ -66,3 +66,34 @@ murders |>
   theme_economist()
 ```
 
+# 9. Data visualization principles
+- **Encoding data using visual cues**: *position*, *aligned lengths*, *angles*, *area*, *brightness*, *color hue*
+	- In general, when displaying quantities, position and length are preferred over angles and/or area. Brightness and color are even harder to quantify than angles.
+	- But they are sometimes useful when more than two dimensions must be displayed at once.
+- **Know when to include 0**
+	- When using length as a visual cue, it is misinformative not to start the bars at 0.
+	- When using position rather than length, it is then not necessary to include 0
+- **Do not distort quantities**
+- **Order categories by a meaningful value**
+- **Show the data**
+- **Ease comparisons**
+	- Use common axes
+	- Aligning plots for comparisons
+- **Transformations**
+	- log transformation
+	- logistic transformation
+	- square root transformation
+- **Visual cues to be compared should be adjacent**
+- **Think of the color blind**
+- **Plots for two variables**
+	- Slope charts
+	- Bland-Altman plot
+- **Encoding a third variable**
+	- We encode categorical variables with color and shape.
+	- For continuous variables, we can use color, intensity, or size.
+- **Avoid pseudo-three-dimensional plots**
+- **Avoid too many significant digits**: `options(digits = 3)`
+- **Know your audience**
+	1. for our own exploratory data analysis
+	2. to convey a message to experts
+	3. to help convey a message to a general audience
