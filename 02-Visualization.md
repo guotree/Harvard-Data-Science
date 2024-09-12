@@ -66,7 +66,7 @@ murders |>
   theme_economist()
 ```
 
-# 9. Data visualization principles
+## 9. Data visualization principles
 - **Encoding data using visual cues**: *position*, *aligned lengths*, *angles*, *area*, *brightness*, *color hue*
 	- In general, when displaying quantities, position and length are preferred over angles and/or area. Brightness and color are even harder to quantify than angles.
 	- But they are sometimes useful when more than two dimensions must be displayed at once.
@@ -76,6 +76,12 @@ murders |>
 - **Do not distort quantities**
 - **Order categories by a meaningful value**
 - **Show the data**
+```R
+# dot plot showing the data
+heights %>% ggplot(aes(sex, height)) + geom_point() 
+# jittered, alpha blended point plot 
+heights %>% ggplot(aes(sex, height)) + geom_jitter(width = 0.1, alpha = 0.2)
+```
 - **Ease comparisons**
 	- Use common axes
 	- Aligning plots for comparisons
@@ -85,6 +91,13 @@ murders |>
 	- square root transformation
 - **Visual cues to be compared should be adjacent**
 - **Think of the color blind**
+```R
+color_blind_friendly_cols <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7") 
+p1 <- data.frame(x = 1:8, y = 1:8, col = as.character(1:8)) %>%  
+	ggplot(aes(x, y, color = col)) +  
+	geom_point(size = 5)  
+p1 + scale_color_manual(values = color_blind_friendly_cols)
+```
 - **Plots for two variables**
 	- Slope charts
 	- Bland-Altman plot
@@ -97,3 +110,7 @@ murders |>
 	1. for our own exploratory data analysis
 	2. to convey a message to experts
 	3. to help convey a message to a general audience
+## 10  Data visualization in practice
+### Case Study 1
+### Case Study 2
+- Logistic transformation: $f(p)=\log(\frac{p}{1-p})$: This scale is useful when we want to highlight differences near 0 or 1
