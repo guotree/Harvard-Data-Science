@@ -1,4 +1,5 @@
-# Notes for HarvardX Data Science
+# HarvardX Data Science
+
 This is a note repository for learning [HarvardX Data Science Professional Certificate | edX](https://www.edx.org/certificates/professional-certificate/harvardx-data-science) which is teaching in R.
 It consists of 9 separate courses:
 
