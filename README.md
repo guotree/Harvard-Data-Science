@@ -7,7 +7,7 @@ It consists of 9 separate courses:
 | :--------------------- | :---------------------------------------------------------------------------------------------------: | :--------------------------------------: | :------: |
 | R Basics               |       [link](https://www.edx.org/learn/r-programming/harvard-university-data-science-r-basics)        |        [Note01](./01-R_Basics.md)        |   100%   |
 | Visualization          |  [link](https://www.edx.org/learn/data-visualization/harvard-university-data-science-visualization)   |     [Note02](./02-Visualization.md)      |   100%   |
-| Probability            |       [link](https://www.edx.org/learn/probability/harvard-university-data-science-probability)       |      [Note03](./03-Probability.md)       |   34%    |
+| Probability            |       [link](https://www.edx.org/learn/probability/harvard-university-data-science-probability)       |      [Note03](./03-Probability.md)       |   51%    |
 | Inference and Modeling | [link](https://www.edx.org/learn/data-science/harvard-university-data-science-inference-and-modeling) | [Note04](./04-Inference_and_Modeling.md) |    -     |
 | Productivity Tools     |   [link](https://www.edx.org/learn/data-science/harvard-university-data-science-productivity-tools)   |   [Note05](./05-Productivity_Tools.md)   |    -     |
 | Wrangling              |       [link](https://www.edx.org/learn/data-science/harvard-university-data-science-wrangling)        |       [Note06](./06-Wrangling.md)        |    -     |

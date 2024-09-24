@@ -162,4 +162,10 @@ qplot(n, prob) + geom_line(aes(n, eprob), col = "red")
 
 ## 2. Continuous probability
 
+In this chapter, we should know the concept of: _Cumulative distribution functions_, _Probability density function_
+
+R uses a convention that lets us remember the names, namely using the letters `d` (density function), `q` (quantile function), `p` (distribution function), and `r` (random generation) in front of a shorthand for the distribution. (e.g. `dnorm`, `qnorm`, `pnorm`, `rnorm`)
+
+A simple chapter~
+
 ## 3. Random variables
