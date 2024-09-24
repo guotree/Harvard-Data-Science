@@ -4,6 +4,8 @@ This part discusses concepts of probability, and uses R to demonstrate these con
 
 ## 1. Discrete probability
 
+**The most important thing in this chapter is to learn how to calculate probabilities and use Monte Carlo simulations.**
+
 **Event**: refer to things that can happen when something occurs by chance.
 
 **Distribution**: We simply assign a probability to each category. their proportion defines the distribution.
@@ -37,6 +39,7 @@ events <- sample(beads, B, replace = TRUE)
 $$
 \mbox{Pr}(A \mbox{ and } B) = \mbox{Pr}(A)\mbox{Pr}(B \mid A)
 $$
+
 **Addition rule**:
 
 $$
