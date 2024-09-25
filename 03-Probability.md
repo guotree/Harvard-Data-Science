@@ -169,3 +169,9 @@ R uses a convention that lets us remember the names, namely using the letters `
 A simple chapter~
 
 ## 3. Random variables
+
+**Central Limit Theorem**: when the number of draws, also called the _sample size_, is large, the probability distribution of the sum of the independent draws is approximately normal.
+
+_Using the CLT, we can skip the Monte Carlo simulation_
+
+**Law of large numbers**: the standard error of the average becomes smaller and smaller as sample size grows larger.
