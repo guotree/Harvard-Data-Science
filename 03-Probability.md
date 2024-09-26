@@ -182,3 +182,37 @@ E(\frac{X_1+X_2+...X_n}{n}) &= n\mu/n =\mu \\
 $$
 
 **Law of large numbers**: the standard error of the average becomes smaller and smaller as sample size grows larger.
+
+## 4. The Big Short
+
+### Equations: Calculating interest rate for 1% probability of losing money
+
+We want to calculate the value of $x$ for which $\mathrm{Pr}(S<0)=0.01$. The expected value $E[S]$ of the sum of $n=1000$ loans given our definitions of $x$,  $l$ and $p$ is:
+
+$$
+\mu_S=(lp+x(1-p))* n
+$$
+
+And the standard error of the sum of $n$ loans, $\mathrm{SE}[S]$, is:
+
+$$
+\sigma_S=\left\vert x-l \right\vert\sqrt{np(1-p)}
+$$
+
+Because we know the definition of a Z-score is $Z=\dfrac{x-\mu}{\sigma}$, we know that $\mathrm{Pr}(S<0)=\mathrm{Pr}(Z<-\dfrac{\mu}{\sigma})$. Thus, $\mathrm{Pr}(S<0)=0.01$ equals:
+
+$$
+\mathrm{Pr}(Z<\frac{-\{lp+x(1-x)\}n}{(x-l)\sqrt{np(1-p)}})
+$$
+
+`z<-qnorm(0.01)` gives us the value of $z$ for which $\mathrm{Pr}(Z\leq z)=0.01$, meaning:
+
+$$
+z = \frac{-\{lp+x(1-x)\}n}{(x-l)\sqrt{np(1-p)}}
+$$
+
+Solving for  gives:
+
+$$
+x = -l\frac{np-z\sqrt{np(1-p)}}{n(1-p)+z\sqrt{np(1-p)}}
+$$
