@@ -174,4 +174,11 @@ A simple chapter~
 
 _Using the CLT, we can skip the Monte Carlo simulation_
 
+$$
+\begin{aligned}
+E(\frac{X_1+X_2+...X_n}{n}) &= n\mu/n =\mu \\
+\sigma(\frac{X_1+X_2+...X_n}{n}) &= \frac{\sigma}{\sqrt{n}}
+\end{aligned}
+$$
+
 **Law of large numbers**: the standard error of the average becomes smaller and smaller as sample size grows larger.
