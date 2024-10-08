@@ -2,7 +2,7 @@
 
 ## 0. Importing data
 
-See in [R basics](01-R_Basics)
+See in [R basics](./01-R_Basics.md)
 
 ## 1. Reshaping data
 
