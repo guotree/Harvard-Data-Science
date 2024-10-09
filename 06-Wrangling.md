@@ -210,3 +210,49 @@ A regular expression (regex) is a way to describe specific patterns of character
 - `str_to_title()` converts to title case, where only the first letter of each word is capitalized.
 - `str_to_sentence()` convert to sentence case, where only the first letter of sentence is capitalized.
 
+### **pdftools** package
+
+`pdf_text`: extract the text in pdf files.
+
+### Renaming levels
+
+1. use `case-when`
+
+```r
+levels(gapminder$country) <- case_when(
+  x == "Antigua and Barbuda" ~ "Barbuda",
+  x == "Dominican Republic" ~ "DR",
+  x == "St. Vincent and the Grenadines" ~ "St. Vincent",
+  x == "Trinidad and Tobago" ~ "Trinidad",
+  .default = x)
+```
+
+2. use `fct_recode` function in the **forcats** package
+
+```r
+library(forcats)
+gapminder$country <- 
+  fct_recode(gapminder$country, 
+             "Barbuda" = "Antigua and Barbuda",
+             "DR" = "Dominican Republic",
+             "St. Vincent" = "St. Vincent and the Grenadines",
+             "Trinidad" = "Trinidad and Tobago")
+```
+
+## 7. Text analysis
+
+
+The **tidytext** package helps us convert free form text into a tidy table.
+
+ `unnest_tokens`: Split a column into tokens, flattening the table into one-token-per-row.
+
+### Sentiment analysis
+
+```r
+library(tidytext)
+library(textdata)
+get_sentiments("bing")
+get_sentiments("afinn")
+get_sentiments("loughran")
+get_sentiments("nrc")
+```
