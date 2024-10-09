@@ -10,9 +10,9 @@ It consists of 9 separate courses:
 | Probability            |       [link](https://www.edx.org/learn/probability/harvard-university-data-science-probability)       |      [Note03](./03-Probability.md)       |   100%   |
 | Inference and Modeling | [link](https://www.edx.org/learn/data-science/harvard-university-data-science-inference-and-modeling) | [Note04](./04-Inference_and_Modeling.md) |   100%   |
 | Productivity Tools     |   [link](https://www.edx.org/learn/data-science/harvard-university-data-science-productivity-tools)   |   [Note05](./05-Productivity_Tools.md)   |   100%   |
-| Wrangling              |       [link](https://www.edx.org/learn/data-science/harvard-university-data-science-wrangling)        |       [Note06](./06-Wrangling.md)        |   45%    |
-| Linear Regression      |   [link](https://www.edx.org/learn/data-science/harvard-university-data-science-linear-regression)    |   [Note07](./07-Linear_Regression.md)    |    -     |
-| Machine Learning       |  [link](https://www.edx.org/learn/machine-learning/harvard-university-data-science-machine-learning)  |    [Note08](./08-Machine_Learning.md)    |    -     |
+| Wrangling              |       [link](https://www.edx.org/learn/data-science/harvard-university-data-science-wrangling)        |       [Note06](./06-Wrangling.md)        |   100%   |
+| Linear Regression      |   [link](https://www.edx.org/learn/data-science/harvard-university-data-science-linear-regression)    |   [Note07](./07-Linear_Regression.md)    |   10%    |
+| Machine Learning       |  [link](https://www.edx.org/learn/machine-learning/harvard-university-data-science-machine-learning)  |    [Note08](./08-Machine_Learning.md)    |    0%    |
 | Capstone               |        [link](https://www.edx.org/learn/data-science/harvard-university-data-science-capstone)        |        [Note09](./09-Capstone.md)        |    -     |
 
 However the core material is two HTML book:
