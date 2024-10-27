@@ -7,6 +7,7 @@
 $$
 \rho=\frac{1}{n}\sum_{i=1}^{n}(\frac{x_i-\mu_x}{\sigma_x})(\frac{y_i-\mu_y}{\sigma_y})
 $$
+
 $\mu_x$, $\mu_y$ are the averages of $x_1,x_2,...,x_n$ and $y_1,y_2,...,y_n$, and $\sigma_x$ and $\sigma_y$ are the standard deviations.
 
 Standardization shows the degree and direction of deviation of the sample from the mean.
@@ -94,3 +95,42 @@ The most common way we use `lm` is by using the character `~` to let `lm` 
 ### Diagnostic plots
 
 The function `plot` applied to an `lm` object automatically plots six plots, and the argument `which` let’s you specify which you want to see.
+
+## 2. Multivariate Regression
+
+### The broom package
+
+The **broom** package facilitates the use of R function: `tidy`, `glance`, `augment`
+
+### Confounding
+
+Confounding refers to a situation in statistical analysis where the effect of one variable is mixed up with the effect of another variable.
+
+We can understand confounding through stratification.
+
+### Multivariable regression
+
+$$
+\mathbf{Y} = \mathbf{X}\mathbf{\beta}+\mathbf{\varepsilon}
+$$
+
+we can use the function `predict` for predicting
+
+## 3. Measurement error models
+
+The **broom** function `augment` allows us to check if the estimated parabola fits the data.
+
+```r
+augment(fit) |> 
+  ggplot() +
+  geom_point(aes(time, observed_distance)) + 
+  geom_line(aes(time, .fitted), col = "blue")
+```
+
+## 4. Treatment effect models
+
+### t-test
+
+$$
+t=\frac{\bar{X}_1-\bar{X}_0}{\sqrt{\frac{s_0^2}{N_0}+\frac{s_1^2}{N_1}}}
+$$
